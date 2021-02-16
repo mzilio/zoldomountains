@@ -1,0 +1,35 @@
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  user-select: none;
+}
+
+.temp-min{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 100px;
+  color: blue;
+}
+
+.temp-max{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 100px;
+  color: red;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Kalam', cursive;
+}
+
+.navbar {
+  font-family: 'Kalam', cursive;
+}

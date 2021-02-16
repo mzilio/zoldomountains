@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Site that aggregates informations about Zoldo's mountains">
+    <meta name="author" content="Matteo Zilio">
+    <title>Zoldo Mountains</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Zoldo Mountains</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item"><a class="nav-link" href="#forecast">Previsioni meteo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#temp">Temperature</a></li>
+              <li class="nav-item"><a class="nav-link" href="#cam">Webcam</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+      <div class="container">
+        <h1 class="mt-3">Zoldo Mountains</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed libero id est sodales auctor ut ut diam. Curabitur lectus elit, malesuada non sodales eget, ullamcorper eu metus. Aliquam tincidunt lorem nibh, quis elementum massa porttitor id. Aenean vestibulum dui at neque rutrum, eget efficitur ligula elementum. Vivamus eros odio, iaculis quis urna id, tincidunt viverra sapien. Pellentesque sollicitudin urna enim, non bibendum ligula vehicula ut. In sodales libero quis turpis rutrum cursus. Duis eget mauris rutrum dolor porttitor lacinia et in nibh.</p>
+      </div>
+      <div class="container" id="forecast">
+        <h2 class="mt-4">Previsioni meteo</h2>
+        <div class="row">
+          <div class="col">
+            <p>Morbi rutrum id lectus in tempus. Donec vehicula dignissim odio, ac vehicula arcu fringilla sit amet. Ut nibh lorem, posuere et ultricies vel, consectetur quis eros. Praesent mauris orci, porttitor sit amet viverra a, finibus sit amet enim. Curabitur mi odio, blandit eget accumsan vel, tempor vel tellus. Maecenas quis velit risus. Maecenas tortor ligula, facilisis quis interdum ac, hendrerit nec magna. Fusce fringilla orci non neque tincidunt, quis porttitor tortor commodo. Cras vehicula ante vel ipsum tincidunt venenatis. Proin tempor tincidunt lectus non hendrerit. Aliquam sed semper diam. Nunc eu nisl vel nunc volutpat cursus in at nulla. Aenean molestie convallis magna ut laoreet. Maecenas iaculis dui ac nibh porta dapibus. Quisque efficitur tristique orci, quis commodo magna hendrerit vitae.</p>
+            <p><a href="https://www.arpa.veneto.it/previsioni/it/pdf/meteo_dolomiti.pdf" download>Previsioni meteo dolomiti</a></p>
+            <p><a href="https://www.arpa.veneto.it/previsioni/it/pdf/prev_dolomiti.pdf" download>Previsioni meteo locali</a> (tenere come riferimento le località Agordo/Pieve di Cadore)</p>
+            <p><a href="https://www.arpa.veneto.it/neve_valanghe/it/pdf/dolomiti_nevevalanghe.pdf" download>Bollettino neve e valanghe</a></p>
+          </div>
+          <div class="col-8">
+            <iframe src="https://www.arpa.veneto.it/previsioni/it/pdf/meteo_dolomiti.pdf#toolbar=0" referrerpolicy="no-referrer" class="w-100 h-100" style="border:none;" title="Bollettino meteo dolomiti venete"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="temp">
+        <h2 class="mt-4">Temperature</h2>
+        <div class="row">
+          <div class="col text-center">
+            <p class="display-6">Minima</p>
+            <p class="temp-min">-11 °C</p>
+          </div>
+          <div class="col text-center">
+            <p class="display-6">Massima</p>
+            <p class="temp-max">-4 °C</p>
+          </div>
+        </div>
+        <div class="row">
+          <canvas id="tempChart" class="w-100"></canvas>
+        </div>
+        <p>Fusce id dapibus dui. Nullam non cursus lectus, sed hendrerit nulla. Ut ac mollis dui. Phasellus ullamcorper est quis nulla tempor, sed porta nisl fermentum. Donec vel magna ac lorem accumsan sollicitudin vitae id mi. Duis nunc risus, rhoncus cursus nibh vel, feugiat ullamcorper ex. Sed non arcu id erat scelerisque auctor ut eu velit. Ut odio augue, laoreet a augue at, ullamcorper porta lorem. Cras rutrum lorem est, at lobortis quam laoreet in. Sed tincidunt consectetur lacus, sed placerat arcu hendrerit sit amet. Mauris vitae urna nec mauris mollis consectetur. Sed congue felis a laoreet consectetur. Nam consequat dolor eget dignissim vestibulum. Etiam eget fermentum justo, vel luctus libero. Praesent dignissim neque a rhoncus sollicitudin. Fusce ullamcorper, nisl nec posuere posuere, nibh mauris gravida metus, nec ornare metus diam nec sem.</p>
+      </div>
+      <div class="container" id="cam">
+        <h2 class="mt-4">Webcam</h2>
+        <p><img src="img/tmpImage.jpg" alt="Val di Zoldo - Dont" class="w-100"></p>
+        <p><img src="https://video.wifi4all.it/VDZ07_low.jpg" alt="Val di Zoldo - Pecol" class="w-100"></p>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted">Made with <span style="color: #e25555;">&hearts;</span> by a mountains lover.</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script src="js/chart.js"></script>
+  </body>
+</html>
